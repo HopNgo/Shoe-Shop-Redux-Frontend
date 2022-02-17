@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://shoe-shop-app-hopngo.herokuapp.com/api',
     headers: {
         'content-type': 'application/json',
     },
