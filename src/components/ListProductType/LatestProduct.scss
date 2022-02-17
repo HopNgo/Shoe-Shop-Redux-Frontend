@@ -1,0 +1,43 @@
+@import "../../assets/styles/responsive.scss";
+
+.latest-product-container {
+  .swiper-btn-prev,
+  .swiper-btn-next {
+    position: absolute;
+    font-size: 3rem;
+    text-align: center;
+    top: 12rem;
+    z-index: 1;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    color: rgba($color: #ffffff, $alpha: 0.5);
+    padding: 0.2rem 1.5rem;
+    border-radius: 50%;
+    transition: opacity 0.1s linear;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    @include desktop {
+      top: 10rem;
+      font-size: 2.5rem;
+    }
+    @include tablet {
+      top: 7rem;
+      font-size: 2rem;
+    }
+    @include tabletMini {
+      top: 6rem;
+      font-size: 1.9rem;
+    }
+    @include mobile {
+      top: 6rem;
+      font-size: 1.7rem;
+    }
+  }
+  .swiper-btn-next {
+    right: 1rem;
+  }
+  .swiper-btn-prev {
+    left: 1rem;
+  }
+}

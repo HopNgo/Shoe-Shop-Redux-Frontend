@@ -1,0 +1,48 @@
+@import "../../assets/styles/responsive.scss";
+.overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    width: 65rem;
+    border-radius: 1rem;
+    @include desktop {
+      width: 50rem;
+    }
+    @include tablet {
+      width: 40rem;
+    }
+    @include tabletMini {
+      width: 38rem;
+    }
+    @include mobile {
+      width: 30rem;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    @include tabletMini {
+      top: 10rem;
+    }
+    @include mobile {
+      top: 10rem;
+    }
+    .icon-close {
+      font-size: 4rem;
+      color: rgb(0, 0, 0);
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+  }
+}

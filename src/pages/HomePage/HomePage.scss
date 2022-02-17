@@ -1,0 +1,33 @@
+@import "../../assets/styles/responsive.scss";
+.home-container {
+  .latest-product-container,
+  .best-seller-container {
+    margin: 0 auto;
+    max-width: 144rem;
+    &__heading {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      font-weight: bold;
+      font-size: 3.2rem;
+      color: rgb(225, 163, 43);
+      @include desktop {
+        font-size: 3rem;
+      }
+      @include tablet {
+        font-size: 2.5rem;
+      }
+      @include mobile {
+        font-size: 2.2rem;
+      }
+      @include tabletMini {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  .best-seller-container {
+    &__heading {
+      margin-top: 5rem;
+    }
+  }
+}

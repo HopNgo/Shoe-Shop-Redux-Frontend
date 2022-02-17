@@ -1,0 +1,102 @@
+@import "../../../assets/styles/responsive.scss";
+.comment-container {
+  display: flex;
+  gap: 0 5rem;
+  margin: 3rem 0;
+  @include tabletMini {
+    gap: 0 2rem;
+  }
+  @include mobile {
+    gap: 0 2rem;
+  }
+  &-image {
+    img {
+      width: 6rem;
+      border-radius: 50%;
+      @include desktop {
+        width: 5.5rem;
+      }
+      @include tablet {
+        width: 5rem;
+      }
+      @include tabletMini {
+        width: 4rem;
+      }
+      @include mobile {
+        width: 3rem;
+      }
+    }
+  }
+  &-right-part {
+    &__content {
+      .author {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-right: 2rem;
+        @include desktop {
+          font-size: 1.8rem;
+        }
+        @include tablet {
+          font-size: 1.5rem;
+        }
+        @include tabletMini {
+          font-size: 1.45rem;
+        }
+        @include mobile {
+          font-size: 1.4rem;
+        }
+      }
+      .createAt {
+        font-size: 1.6rem;
+        @include desktop {
+          font-size: 1.4rem;
+        }
+        @include tablet {
+          font-size: 1.2rem;
+        }
+        @include tabletMini {
+          font-size: 1.15rem;
+        }
+        @include mobile {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    &__text {
+      font-size: 1.6rem;
+      margin: 0.8rem 0;
+      @include desktop {
+        font-size: 1.4rem;
+      }
+      @include tablet {
+        font-size: 1.2rem;
+      }
+      @include tabletMini {
+        font-size: 1.15rem;
+      }
+      @include mobile {
+        font-size: 1.1rem;
+      }
+    }
+    &__action {
+      font-size: 1.4rem;
+      @include tabletMini {
+        font-size: 1.2rem;
+      }
+      @include mobile {
+        font-size: 1.1rem;
+      }
+      .reply,
+      .edit {
+        margin-right: 2rem;
+      }
+      .reply:hover,
+      .edit:hover,
+      .delete:hover {
+        cursor: pointer;
+        color: blue;
+        font-size: 1.45rem;
+      }
+    }
+  }
+}

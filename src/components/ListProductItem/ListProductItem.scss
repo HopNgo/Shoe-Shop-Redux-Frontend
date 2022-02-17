@@ -1,0 +1,146 @@
+@import "../../assets/styles/responsive.scss";
+
+.list-product-item-container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  @include desktop {
+    width: 21rem;
+  }
+  @include tabletMini {
+    width: 13rem;
+  }
+  @include tablet {
+    width: 14rem;
+  }
+  @include mobile {
+    width: 12rem;
+  }
+  &__image {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    @include desktop {
+      width: 21rem;
+      height: 21rem;
+    }
+    @include tabletMini{
+      width: 13rem;
+      height: 13rem;
+    }
+    @include tablet {
+      width: 14rem;
+      height: 14rem;
+    }
+    @include mobile {
+      width: 12rem;
+      height: 12rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 2rem;
+      box-shadow: 1px 2px rgba($color: #000000, $alpha: 0.3);
+    }
+    &-overlay {
+      position: absolute;
+      border-radius: 2rem;
+      background-color: rgba($color: #000000, $alpha: 0.35);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 2rem;
+      opacity: 0;
+      transition: all 0.4s ease;
+      .btn-zoom-in,
+      .btn-infor {
+        outline: none;
+        background-color: transparent;
+        padding: 1rem 2rem;
+        border: 1px solid #ebdccb;
+        color: #ebdccb;
+        border-radius: 1rem;
+        transition: all 0.3s linear;
+        @include tablet {
+          padding: 0.7rem 1.4rem;
+        }
+        @include tabletMini {
+          padding: 0.5rem 1rem;
+        }
+        @include mobile {
+          padding: 0.5rem 1rem;
+        }
+        &:hover {
+          color: #f9f9f9;
+          background-color: #ebdccb;
+        }
+        .zoom-in,
+        .infor {
+          font-size: 3rem;
+          @include desktop {
+            font-size: 2.5rem;
+          }
+          @include tablet {
+            font-size: 2.2rem;
+          }
+          @include tabletMini {
+            font-size: 2.1rem;
+          }
+          @include mobile {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    &:hover > &-overlay {
+      opacity: 1;
+    }
+  }
+  &__name {
+    margin-top: 1rem;
+    h3 {
+      font-size: 1.7rem;
+      text-align: center;
+      font-style: italic;
+      @include desktop {
+        font-size: 1.5rem;
+      }
+      @include tabletMini {
+        font-size: 1.2rem;
+      }
+      @include tablet {
+        font-size: 1.3rem;
+      }
+      @include mobile {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  &__price {
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-style: italic;
+    @include desktop {
+      font-size: 1.5rem;
+    }
+    @include tabletMini {
+      font-size: 1.2rem;
+    }
+    @include tablet {
+      font-size: 1.3rem;
+    }
+    @include mobile {
+      font-size: 1rem;
+    }
+    .new-price {
+      color: rgb(225, 163, 43);
+    }
+  }
+}

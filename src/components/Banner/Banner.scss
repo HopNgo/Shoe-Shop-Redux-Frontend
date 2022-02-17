@@ -1,0 +1,165 @@
+@import "../../assets/styles/responsive.scss";
+
+.banner-container {
+  margin-top: 6.4rem;
+  z-index: -1;
+  display: flex;
+  justify-content: space-around;
+  height: 50rem;
+  @include mobile {
+    justify-content: none;
+    flex-direction: column-reverse;
+    gap: 5rem 0;
+  }
+  @include tabletMini {
+    justify-content: none;
+    flex-direction: column-reverse;
+    gap: 5rem 0;
+  }
+  &__textAndBtn {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    opacity: 0;
+    transform: translateX(-70rem);
+    animation: TextAndBtnLeftToRight 2s ease forwards 1.5s;
+    span {
+      font-size: 5rem;
+      font-style: italic;
+      font-weight: 700;
+      @include desktop {
+        font-size: 3.7rem;
+      }
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include mobile {
+        font-size: 2rem;
+      }
+      @include tabletMini{
+        font-size: 2.1rem;
+      }
+    }
+    button {
+      padding: 1rem 4rem;
+      font-size: 2.3rem;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5rem;
+      @include desktop {
+        padding: 0.8rem 3.2rem;
+        font-size: 2.1rem;
+      }
+      @include tablet {
+        padding: 0.6rem 3rem;
+        font-size: 1.8rem;
+      }
+      @include mobile {
+        padding: 0.4rem 2.8rem;
+        font-size: 1.6rem;
+      }
+      @include tabletMini {
+        padding: 0.5rem 2.9rem;
+        font-size: 1.6rem;
+      }
+      &:hover {
+        background-color: blanchedalmond;
+      }
+    }
+  }
+  &__images {
+    position: relative;
+    .text {
+      position: absolute;
+      width: 30rem;
+      left: -40rem;
+      top: -40rem;
+      animation: TextTopToBottom 1s ease forwards 1s;
+      @include desktop {
+        width: 23rem;
+        left: -30rem;
+      }
+      @include tablet {
+        width: 20rem;
+        left: -23rem;
+      }
+      @include mobile {
+        width: 12rem;
+        top: -40rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      @include tabletMini {
+        width: 15rem;
+        top: -40rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    .shoe {
+      position: absolute;
+      width: 50rem;
+      top: 15rem;
+      left: -40rem;
+      transform: rotate(0deg);
+      animation: ShoeRotate 2s ease forwards 0.05s;
+      @include desktop {
+        width: 37rem;
+        left: -30rem;
+      }
+      @include tablet {
+        width: 32rem;
+        left: -23rem;
+      }
+      @include mobile {
+        width: 20rem;
+        top: 20rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      @include tabletMini {
+        width: 25rem;
+        top: 20rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@keyframes ShoeRotate {
+  from {
+    transform: scale(0) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(-35deg);
+  }
+}
+@keyframes TextTopToBottom {
+  from {
+    top: -40rem;
+  }
+  to {
+    top: 8rem;
+  }
+}
+@keyframes TextAndBtnLeftToRight {
+  from {
+    transform: translateX(-70rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
