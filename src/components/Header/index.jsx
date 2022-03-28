@@ -11,12 +11,12 @@ import { hideCart, showCart } from "../../redux/cart/cartSlice";
 import { useState } from "react";
 
 function Header() {
+  const [showMobileNavbar, setShowMobileNavbar] = useState("");
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
   const isShowCart = useSelector((state) => state.cart.isShow);
   const totalQtyCart = useSelector((state) => state.cart.totalQty);
   const navigate = useNavigate();
-  const [showNavBarMobile, setShowNavBarMobile] = useState(false);
   const handleClickLogo = () => {
     navigate("/");
   };
@@ -28,9 +28,11 @@ function Header() {
     }
   };
   const handleClickDehazeIcon = () => {
-    const linksElement = document.querySelector(".mobile-navbar");
-    linksElement.classList.toggle("active");
+    showMobileNavbar === "active"
+      ? setShowMobileNavbar("")
+      : setShowMobileNavbar("active");
   };
+
   return (
     <div className="header-container">
       <div className="header-container__logo">
@@ -42,20 +44,38 @@ function Header() {
           onClick={handleClickDehazeIcon}
         />
       </div>
-      <div className="header-container__links mobile-navbar">
-        <Link className="link" to="/">
+      <div
+        className={"header-container__links mobile-navbar " + showMobileNavbar}
+      >
+        <Link className="link" to="/" onClick={() => setShowMobileNavbar("")}>
           Home
         </Link>
-        <Link className="link" to="/type/latestproduct">
+        <Link
+          className="link"
+          to="/type/latestproduct"
+          onClick={() => setShowMobileNavbar("")}
+        >
           Hàng mới
         </Link>
-        <Link className="link" to="/brand/nike">
+        <Link
+          className="link"
+          to="/brand/nike"
+          onClick={() => setShowMobileNavbar("")}
+        >
           Nike
         </Link>
-        <Link className="link" to="/brand/adidas">
+        <Link
+          className="link"
+          to="/brand/adidas"
+          onClick={() => setShowMobileNavbar("")}
+        >
           Adidas
         </Link>
-        <Link className="link" to="/brand/converse">
+        <Link
+          className="link"
+          to="/brand/converse"
+          onClick={() => setShowMobileNavbar("")}
+        >
           Converse
         </Link>
       </div>

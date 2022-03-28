@@ -1,0 +1,26 @@
+.text-change,
+.text-cancel {
+  border: 1px solid #6c757d;
+  border-radius: 2rem;
+  transition: all 0.2s linear;
+  color: #6c757d;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
+.text-save {
+  border: 1px solid #ff0000;
+  border-radius: 2rem;
+  transition: all 0.2s linear;
+  color: #ff0000;
+  opacity: 0.7;
+  &:hover {
+    cursor: pointer;
+    color: #ff0000;
+    opacity: 1;
+    border: 1px solid #ff0000;
+  }
+}

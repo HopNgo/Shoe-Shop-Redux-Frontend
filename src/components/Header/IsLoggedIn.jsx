@@ -7,7 +7,6 @@ import { logOut } from "../../redux/user/userSlice";
 
 function IsLoggedIn({ currentUser }) {
   const [showLogOut, setShowLogOut] = useState(false);
-  console.log(currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClickAccountIcon = () => {
@@ -23,14 +22,17 @@ function IsLoggedIn({ currentUser }) {
   const handleClickLogOut = () => {
     const action = logOut();
     dispatch(action);
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("rememberedAccount");
     navigate("/");
   };
-  if (currentUser.id) {
+  console.log(currentUser);
+  if (currentUser) {
     return (
       <div className="header-container__icons-image">
         <img
           onClick={handleClickImage}
-          src={currentUser.photoURL}
+          src={currentUser.avatarUrl}
           alt="Not Found"
         />
         {showLogOut && (

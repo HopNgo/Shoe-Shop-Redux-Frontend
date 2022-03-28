@@ -3,10 +3,14 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { removeItemCart } from "../../redux/cart/cartSlice";
+import { useNavigate } from "react-router-dom";
+import { hideCart } from "../../redux/cart/cartSlice";
 
 function Cart({ isShow }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  
   useEffect(() => {
     const cartContainerElement = document.querySelector(".cart-container");
     if (isShow === true) {
@@ -72,7 +76,15 @@ function Cart({ isShow }) {
           .000đ
         </span>
       </div>
-      <button className="cart-container__btnCheckout">KIỂM TRA ĐƠN HÀNG</button>
+      <button
+        onClick={() => {
+          navigate("/cart/shoppingCart");
+          dispatch(hideCart());
+        }}
+        className="cart-container__btnCheckout"
+      >
+        KIỂM TRA ĐƠN HÀNG
+      </button>
     </div>
   );
 }

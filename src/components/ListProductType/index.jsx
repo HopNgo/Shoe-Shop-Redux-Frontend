@@ -1,18 +1,16 @@
-import { useSelector } from "react-redux";
 import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-
+import { useSelector } from "react-redux";
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from "swiper";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import "./LatestProduct.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
 import HomeProductItem from "../HomeProductItem";
+import "./LatestProduct.scss";
+
+
+
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -20,7 +18,6 @@ function ListProductType({ type }) {
   const products = useSelector((state) => state.products.list);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
-  console.log(products);
   return (
     <div className="latest-product-container">
       <Swiper
@@ -56,7 +53,6 @@ function ListProductType({ type }) {
           swiper.params.navigation.prevEl = navigationPrevRef.current;
           swiper.params.navigation.nextEl = navigationNextRef.current;
         }}
-        onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
         {products.map((item) => {

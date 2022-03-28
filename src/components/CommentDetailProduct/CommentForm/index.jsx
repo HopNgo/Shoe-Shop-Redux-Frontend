@@ -22,7 +22,7 @@ function CommentForm({
   const currentUser = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
   const handleClickSubmitFormComment = () => {
-    if (!currentUser.id) {
+    if (!currentUser) {
       navigate("/signin");
       alert("ERROR: Bạn chưa đăng nhập !!!");
     } else {
@@ -33,18 +33,18 @@ function CommentForm({
               _id: activeComment.id,
               body: commentText,
               productSlug: slug,
-              username: currentUser.username,
-              userId: currentUser.id,
+              name: currentUser.name,
+              userId: currentUser.userId,
               parentId: parentId,
-              photoURL: currentUser.photoURL,
+              avatarUrl: currentUser.avatarUrl,
             }
           : {
               body: commentText,
               productSlug: slug,
-              username: currentUser.username,
-              userId: currentUser.id,
+              name: currentUser.name,
+              userId: currentUser.userId,
               parentId: parentId,
-              photoURL: currentUser.photoURL,
+              avatarUrl: currentUser.avatarUrl,
             };
       if (label === "PHẢN HỒI" || label === "BÌNH LUẬN") {
         dispatch(addCommentFn(comment));

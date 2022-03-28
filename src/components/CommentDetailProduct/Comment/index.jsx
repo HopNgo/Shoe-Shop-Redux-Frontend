@@ -1,25 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCommentFn } from "../../../redux/comment/commentSlice";
+import formatDate from "../../../utils/formatDate";
 import CommentForm from "../CommentForm";
 import "./Comment.scss";
 
 function Comment({ comment, replies, activeComment, setActiveComment }) {
-  const dateComment = new Date(comment.updatedAt);
-  const currentUserId = useSelector((state) => state.user.currentUser.id);
+  const currentUserId = useSelector((state) =>
+    state.user.currentUser ? state.user.currentUser.userId : null
+  );
   const dispatch = useDispatch();
   const canReply = Boolean(currentUserId);
   const canEdit = currentUserId === comment.userId;
   const canDelete = currentUserId === comment.userId;
   console.log(activeComment);
-  const dateConvert =
-    dateComment.getDate() +
-    "/" +
-    (dateComment.getMonth() + 1) +
-    "/" +
-    dateComment.getFullYear() +
-    ", " +
-    dateComment.toLocaleTimeString();
+
   const handleClickDeleteComment = (commentId) => {
     console.log(commentId);
     const commentIdObject = {
@@ -40,12 +35,12 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
   return (
     <div className="comment-container">
       <div className="comment-container-image">
-        <img src={comment.photoURL} alt="Not found" />
+        <img src={comment.avatarUrl} alt="Not found" />
       </div>
       <div className="comment-container-right-part">
         <div className="comment-container-right-part__content">
-          <span className="author">{comment.username}</span>
-          <span className="createAt">{dateConvert}</span>
+          <span className="author">{comment.name}</span>
+          <span className="createAt">{formatDate(comment.updatedAt)}</span>
         </div>
         {!isEditting && (
           <div className="comment-container-right-part__text">

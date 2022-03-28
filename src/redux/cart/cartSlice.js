@@ -1,34 +1,79 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import cartApi from "../../api/cartApi";
 
-const storageCart = JSON.parse(localStorage.getItem('storageCart')) || { items: [], totalQty: 0, totalPrice: 0 };
+export const orderCart = createAsyncThunk(
+  "/cart/orderCart",
+  async (payload) => {
+    const res = await cartApi.orderCart(payload);
+    return res.data;
+  }
+);
+
+const storageCart = JSON.parse(localStorage.getItem("storageCart")) || {
+  items: [],
+  totalQty: 0,
+  totalPrice: 0,
+};
 console.log(storageCart);
 
 const cart = createSlice({
-    name: 'cart',
-    initialState: {
-        ...storageCart,
-        isShow: null
+  name: "cart",
+  initialState: {
+    ...storageCart,
+    isShow: null,
+    isLoading: false,
+  },
+  reducers: {
+    showCart: (state) => {
+      state.isShow = true;
     },
-    reducers: {
-        showCart: (state) => {
-            state.isShow = true;
-        },
-        hideCart: (state) => {
-            state.isShow = false;
-        },
-        addItemCart: (state, action) => {
-            state.items.push(action.payload);
-            state.totalQty += action.payload.qty;
-            state.totalPrice += action.payload.price;
-        },
-        removeItemCart: (state, action) => {
-            state.totalQty -= state.items[action.payload].qty;
-            state.totalPrice -= state.items[action.payload].price;
-            state.items.splice(action.payload, 1);
-        }
-    }
-})
-
+    hideCart: (state) => {
+      state.isShow = false;
+    },
+    addItemCart: (state, action) => {
+      console.log(action.payload);
+      const indexTheSameItem = state.items.findIndex(
+        (item) =>
+          item.item._id === action.payload.item._id &&
+          action.payload.size === item.size
+      );
+      if (indexTheSameItem >= 0) {
+        state.items[indexTheSameItem].qty += action.payload.qty;
+        state.items[indexTheSameItem].price *=
+          state.items[indexTheSameItem].qty;
+        state.totalQty += action.payload.qty;
+        state.totalPrice += action.payload.price;
+      } else {
+        state.items.push(action.payload);
+        state.totalQty += action.payload.qty;
+        state.totalPrice += action.payload.price;
+      }
+    },
+    removeItemCart: (state, action) => {
+      state.totalQty -= state.items[action.payload].qty;
+      state.totalPrice -= state.items[action.payload].price;
+      state.items.splice(action.payload, 1);
+    },
+  },
+  extraReducers: {
+    [orderCart.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [orderCart.fulfilled]: (state) => {
+      state.items = [];
+      state.totalQty = 0;
+      state.totalPrice = 0;
+      state.isLoading = false;
+      state.isShow = false;
+    },
+    [orderCart.rejected]: (state) => {
+      state = {
+        ...state,
+        isLoading: false,
+      };
+    },
+  },
+});
 
 const { reducer, actions } = cart;
 

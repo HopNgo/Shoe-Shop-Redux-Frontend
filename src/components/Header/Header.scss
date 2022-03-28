@@ -14,10 +14,14 @@
     align-self: center;
     display: none;
     order: -1;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
     @include mobile {
       display: block;
     }
-    @include tabletMini{
+    @include tabletMini {
       display: block;
     }
     .iconShowNavbar {
@@ -146,13 +150,17 @@
     }
     .logout {
       position: fixed;
+      color: #2c2c2c;
       z-index: 10;
       top: 6.2rem;
       right: 16rem;
       font-size: 2rem;
       padding: 1rem 3rem;
       font-weight: bold;
-      background-color: #ebdccb;
+      background-color: white;
+      transition: all 0.2s linear;
+      box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
+
       &:hover {
         cursor: pointer;
         opacity: 0.8;
@@ -160,9 +168,11 @@
     }
     &-image {
       width: 2.7rem;
+      height: 2.7rem;
       border-radius: 50%;
       img {
         width: 100%;
+        height: 100%;
         border-radius: 50%;
         &:hover {
           cursor: pointer;
