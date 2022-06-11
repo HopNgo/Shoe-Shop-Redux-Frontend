@@ -49,4 +49,4 @@ function IsLoggedIn({ currentUser }) {
   }
 }
 
-export default IsLoggedIn;
+export default React.memo(IsLoggedIn);

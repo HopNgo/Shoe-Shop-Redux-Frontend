@@ -5,14 +5,19 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 import "./Header.scss";
 import images from "../../constants/images";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import IsLoggedIn from "./IsLoggedIn";
 import { hideCart, showCart } from "../../redux/cart/cartSlice";
 import { useState } from "react";
+import SearchBox from "../SearchBox";
 
 function Header() {
   const [showMobileNavbar, setShowMobileNavbar] = useState("");
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const [showSearchBox, setShowSearchBox] = useState(false);
+  const currentUser = useSelector(
+    (state) => state.user.currentUser,
+    shallowEqual
+  );
   const dispatch = useDispatch();
   const isShowCart = useSelector((state) => state.cart.isShow);
   const totalQtyCart = useSelector((state) => state.cart.totalQty);
@@ -35,6 +40,11 @@ function Header() {
 
   return (
     <div className="header-container">
+      {showSearchBox && (
+        <div className="header-container__searchBox">
+          <SearchBox setShowSearchBox={setShowSearchBox}/>
+        </div>
+      )}
       <div className="header-container__logo">
         <img onClick={handleClickLogo} src={images.logo} alt="logo" />
       </div>
@@ -80,7 +90,10 @@ function Header() {
         </Link>
       </div>
       <div className="header-container__icons">
-        <SearchIcon className="icon" />
+        <SearchIcon
+          className="icon"
+          onClick={() => setShowSearchBox(!showSearchBox)}
+        />
         {<IsLoggedIn currentUser={currentUser} />}
         <div className="header-container__icons-cart">
           <div className="bagde">{totalQtyCart}</div>

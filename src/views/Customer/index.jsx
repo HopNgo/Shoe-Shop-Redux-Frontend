@@ -9,6 +9,7 @@ import DetailProductPage from "../../pages/DetaiProductPage";
 import HomePage from "../../pages/HomePage";
 import ListProductPage from "../../pages/ListProductPage";
 import OrderSuccessPage from "../../pages/OrderSuccessPage";
+import SearchPage from "../../pages/SearchPage";
 import { getCommentsFn } from "../../redux/comment/commentSlice";
 import { getProducts } from "../../redux/product/productSlice";
 import Auth from "../../utils/Auth";
@@ -41,6 +42,7 @@ const Customer = () => {
         <Route path="/type/:type" element={<ListProductPage />} />
         <Route path="/brand/:brand" element={<ListProductPage />} />
         <Route path="/gender/:gender" element={<ListProductPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/brand/:brand/:slug" element={<DetailProductPage />} />
         <Route path="/cart/shoppingCart" element={<AuthShoppingCart />} />
         <Route path="/cart/orderSuccess" element={<OrderSuccessPage />} />

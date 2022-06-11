@@ -1,0 +1,22 @@
+.search-box-container {
+  display: flex;
+  background-color: #ebdccb;
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  &__input {
+    .input-search {
+      font-size: 1.3rem;
+    }
+  }
+  &__btn {
+    .btn-search {
+      font-size: 1.3rem;
+      background-color: rgb(71, 47, 30);
+      &:hover {
+        background-color: rgb(71, 47, 30);
+        opacity: 0.8;
+      }
+    }
+  }
+}

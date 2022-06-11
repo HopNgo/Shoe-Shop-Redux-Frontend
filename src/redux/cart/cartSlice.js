@@ -38,9 +38,9 @@ const cart = createSlice({
           action.payload.size === item.size
       );
       if (indexTheSameItem >= 0) {
+        console.log(action.payload);
         state.items[indexTheSameItem].qty += action.payload.qty;
-        state.items[indexTheSameItem].price *=
-          state.items[indexTheSameItem].qty;
+        state.items[indexTheSameItem].price += action.payload.price;
         state.totalQty += action.payload.qty;
         state.totalPrice += action.payload.price;
       } else {
@@ -50,8 +50,8 @@ const cart = createSlice({
       }
     },
     removeItemCart: (state, action) => {
-      state.totalQty -= state.items[action.payload].qty;
       state.totalPrice -= state.items[action.payload].price;
+      state.totalQty -= state.items[action.payload].qty;
       state.items.splice(action.payload, 1);
     },
   },
