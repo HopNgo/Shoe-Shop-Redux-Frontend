@@ -1,6 +1,13 @@
 @import "../../assets/styles/responsive.scss";
 
 .latest-product-container {
+    .loading{
+      min-width: 30rem;
+      min-height: 30rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   .swiper-btn-prev,
   .swiper-btn-next {
     position: absolute;

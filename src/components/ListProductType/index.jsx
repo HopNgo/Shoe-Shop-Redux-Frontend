@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useSelector } from "react-redux";
+import { Spinner } from "reactstrap";
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -9,13 +10,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import HomeProductItem from "../HomeProductItem";
 import "./LatestProduct.scss";
 
-
-
-
 SwiperCore.use([Navigation, Pagination]);
 
 function ListProductType({ type }) {
   const products = useSelector((state) => state.products.list);
+  const statusProduct = useSelector((state) => state.products.status);
+  console.log(statusProduct);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
@@ -55,6 +55,18 @@ function ListProductType({ type }) {
         }}
         onSlideChange={() => console.log("slide change")}
       >
+        {statusProduct === "loading" ? (
+          <div className="loading">
+            <Spinner
+              style={{
+                color: "#533723",
+                fontSize: "2rem",
+                width: "3rem",
+                height: "3rem",
+              }}
+            />
+          </div>
+        ) : null}
         {products.map((item) => {
           if (item.type === type) {
             return (
@@ -69,13 +81,14 @@ function ListProductType({ type }) {
                 />
               </SwiperSlide>
             );
+          } else {
+            return null;
           }
         })}
         <div className="swiper-btn-prev" ref={navigationPrevRef}>
           {"<"}
         </div>
         <div className="swiper-btn-next" ref={navigationNextRef}>
-          {" "}
           {">"}
         </div>
       </Swiper>
