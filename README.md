@@ -1,11 +1,11 @@
 # Link Deploy: https://shoe-shop-app-hopngo.netlify.app/
 
-Shoe Shop là một trang web e-commerce dùng để bán các loại giày thương hiệu trên thế giới.
+Shoe Shop is an e-commerce website used to sell brand shoes from around the world.
 
-Trang web phục vụ cho 2 đối tượng : Admin và Customer
+The website serves 2 audiences: Admin and Customer
 
-Muốn login bằng admin hãy đăng nhập bằng tài khoản và mật khẩu như sau:
+To login as admin, please login with the following account and password:
 
-Tên tài khoản: admin
+Username: admin
 
-Mật khẩu : admin
+Password: admin
