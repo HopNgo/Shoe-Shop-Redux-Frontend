@@ -1,6 +1,6 @@
 # REACT/REDUX - SHOE SHOP E-COMMERCE - Building frontend for web Shoe-Shop-Redux-Frontend
 
-#### Shoe Shop is an e-commerce website used to sell brand shoes from around the world.
+#### Shoe Shop is an e-commerce website which sells brand shoes from around the world.
 
 ##### The website serves 2 audiences: Admin and Customer
 
