@@ -10,7 +10,7 @@ export const getCommentsFn = createAsyncThunk(
   "comment/getComments",
   async () => {
     const res = await getComments();
-    console.log(res);
+
     return res.data;
   }
 );
@@ -18,7 +18,7 @@ export const addCommentFn = createAsyncThunk(
   "comment/addComment",
   async (payload) => {
     const res = await addComment(payload);
-    console.log(res);
+
     return res.data;
   }
 );
@@ -26,7 +26,7 @@ export const deleteCommentFn = createAsyncThunk(
   "comment/deleteComment",
   async (payload) => {
     const res = await deleteComment(payload);
-    console.log(res.data);
+
     return res.data;
   }
 );
@@ -34,7 +34,7 @@ export const updateCommentFn = createAsyncThunk(
   "comment/updateComment",
   async (payload) => {
     const res = await updateComment(payload);
-    console.log(res.data);
+
     return res.data;
   }
 );
@@ -58,12 +58,11 @@ const comment = createSlice({
       );
     },
     [updateCommentFn.fulfilled]: (state, action) => {
-      console.log(action.payload);
       const commentUpdate = action.payload;
       const indexCommentUpdate = state.list.findIndex(
         (comment) => comment._id === commentUpdate._id
       );
-      console.log(indexCommentUpdate);
+
       if (indexCommentUpdate >= 0) {
         state.list[indexCommentUpdate] = commentUpdate;
       }

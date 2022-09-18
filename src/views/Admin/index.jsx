@@ -4,7 +4,7 @@ import { Col, Container, Row } from "reactstrap";
 import DashBoard from "../../components/DashBoard";
 import AdminPage from "../../pages/AdminPage";
 import ManageAccountPage from "../../pages/ManageAccountPage";
-import ManageCartPage from "../../pages/ManageCartPage";
+import ManageCartPage from "../../pages/ManageOrderPage";
 import ManageProductPage from "../../pages/ManageProductPage";
 import "./Admin.scss";
 

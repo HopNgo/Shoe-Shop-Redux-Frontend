@@ -78,63 +78,63 @@
       font-size: 1.1rem;
     }
     p:first-child {
-      margin-left: 4rem;
+      margin-left: 5rem;
       @include desktop {
-        margin-left: 2.5rem;
+        margin-left: 3.2rem;
       }
       @include tablet {
-        margin-left: 2.5rem;
+        margin-left: 3rem;
       }
       @include tabletMini {
         margin-left: 3rem;
       }
       @include mobile {
-        margin-left: 1rem;
+        margin-left: 2.2rem;
       }
     }
     p:nth-child(2) {
-      margin-left: 3.5rem;
+      margin-left: 4rem;
+      @include desktop {
+        margin-left: 2.6rem;
+      }
+      @include tablet {
+        margin-left: 3.5rem;
+      }
+      @include tabletMini {
+        margin-left: 2.3rem;
+      }
+      @include mobile {
+        margin-left: 3rem;
+      }
+    }
+    p:nth-child(3) {
+      margin-left: 4rem;
       @include desktop {
         margin-left: 3rem;
       }
       @include tablet {
-        margin-left: 3.5rem;
+        margin-left: 2.2rem;
       }
       @include tabletMini {
-        margin-left: 2rem;
+        margin-left: 3.2rem;
       }
       @include mobile {
-        margin-left: 3.5rem;
-      }
-    }
-    p:nth-child(3) {
-      margin-left: 4.5rem;
-      @include desktop {
-        margin-left: 2.7rem;
-      }
-      @include tablet {
-        margin-left: 2.5rem;
-      }
-      @include tabletMini {
-        margin-left: 3.5rem;
-      }
-      @include mobile {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
       }
     }
     p:last-child {
-      margin-left: 4rem;
+      margin-left: 5rem;
       @include desktop {
-        margin-left: 2.5rem;
+        margin-left: 4rem;
       }
       @include tablet {
-        margin-left: 2.3rem;
+        margin-left: 3.2rem;
       }
       @include tabletMini {
-        margin-left: 2.3rem;
+        margin-left: 3.3rem;
       }
       @include mobile {
-        margin-left: 1.8rem;
+        margin-left: 2.5rem;
       }
     }
   }

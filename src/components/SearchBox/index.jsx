@@ -12,7 +12,7 @@ const SearchBox = ({ setShowSearchBox }) => {
     navigate({
       pathname: "search",
       search: createSearchParams({
-        q: valueSearchBox,  
+        q: valueSearchBox,
       }).toString(),
     });
     setShowSearchBox((prev) => !prev);
@@ -22,13 +22,13 @@ const SearchBox = ({ setShowSearchBox }) => {
       <div className="search-box-container__input">
         <Input
           className="input-search"
-          placeholder="Nhập tên sản phẩm"
+          placeholder="Enter product..."
           onChange={(e) => setValueSearchBox(e.target.value)}
         />
       </div>
       <div className="search-box-container__btn">
         <Button className="btn-search" onClick={handleClickBtnSearch}>
-          Tìm Kiếm
+          Search
         </Button>
       </div>
     </div>

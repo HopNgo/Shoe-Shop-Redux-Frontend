@@ -4,13 +4,12 @@ import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import { deleteProduct } from "../../redux/product/productSlice";
 
 const ModalDeleteProduct = ({ setIsDeleting, isDeleting }) => {
-  console.log(isDeleting);
   const dispatch = useDispatch();
   const handleClickDeleteProduct = () => {
     dispatch(deleteProduct({ _id: isDeleting.id }));
     setIsDeleting({ show: !isDeleting.show, id: null });
   };
-  console.log("123");
+
   return (
     <Modal
       className="fs-4"
@@ -20,10 +19,10 @@ const ModalDeleteProduct = ({ setIsDeleting, isDeleting }) => {
       <ModalHeader
         toggle={() => setIsDeleting({ show: !isDeleting.show, id: null })}
       >
-        Xóa sản phẩm ?
+        Remove Product
       </ModalHeader>
       <ModalBody style={{ height: "10rem" }}>
-        Bán có chắc chắn muốn xóa sản phẩm này không ?
+        Are you sure you want to remove this product ?
       </ModalBody>
       <ModalFooter>
         <Button
@@ -31,13 +30,13 @@ const ModalDeleteProduct = ({ setIsDeleting, isDeleting }) => {
           color="danger"
           onClick={handleClickDeleteProduct}
         >
-          Xóa
+          Comfirm
         </Button>
         <Button
           className="fs-4 px-4"
           onClick={() => setIsDeleting({ show: !isDeleting.show, id: null })}
         >
-          Hủy
+          Cancel
         </Button>
       </ModalFooter>
     </Modal>

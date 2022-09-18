@@ -21,7 +21,7 @@
   &--support {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     @include mobile {
       gap: 1rem;
     }
@@ -29,7 +29,7 @@
       gap: 1rem;
     }
     &__heading {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: bold;
       @include desktop {
         font-size: 2rem;
@@ -46,7 +46,7 @@
     }
     &__hotline,
     &__content {
-      font-size: 2rem;
+      font-size: 1.7rem;
       @include desktop {
         font-size: 1.5rem;
       }
@@ -64,9 +64,9 @@
   &--branch {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.2rem;
     &__heading {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: bold;
       @include desktop {
         font-size: 2rem;
@@ -82,7 +82,7 @@
       }
     }
     &__city {
-      font-size: 2rem;
+      font-size: 1.7rem;
       @include desktop {
         font-size: 1.5rem;
       }
@@ -102,7 +102,7 @@
     flex-direction: column;
     gap: 2rem;
     &__heading {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: bold;
       @include desktop {
         font-size: 2rem;
@@ -136,7 +136,11 @@
       padding: 0.6rem 2rem;
       font-size: 1.5rem;
       max-width: 30rem;
-      background-color: #c4c4c4;
+      background-color: transparent;
+      border: 1px solid #533723;
+      border-radius: 5px;
+      color: #533723;
+      transition: all 0.6s;
       @include desktop {
         max-width: 25rem;
       }
@@ -144,7 +148,8 @@
         max-width: 17rem;
       }
       &:hover {
-        opacity: 0.8;
+        background-color: #533723;
+        color: white;
       }
     }
   }

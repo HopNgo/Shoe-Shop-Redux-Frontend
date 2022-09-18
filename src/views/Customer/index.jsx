@@ -42,6 +42,7 @@ const Customer = () => {
         <Route path="/type/:type" element={<ListProductPage />} />
         <Route path="/brand/:brand" element={<ListProductPage />} />
         <Route path="/gender/:gender" element={<ListProductPage />} />
+        <Route path="/price/*" element={<ListProductPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/brand/:brand/:slug" element={<DetailProductPage />} />
         <Route path="/cart/shoppingCart" element={<AuthShoppingCart />} />

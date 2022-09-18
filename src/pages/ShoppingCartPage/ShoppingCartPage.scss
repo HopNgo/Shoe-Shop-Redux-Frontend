@@ -1,3 +1,5 @@
+@import "../../assets/styles/responsive";
+
 .shopping-cart-page-container {
   margin-top: 10rem;
   margin-bottom: 11rem;
@@ -7,10 +9,5 @@
     text-align: center;
     font-size: 3rem;
   }
-  .btn-order {
-    &:hover {
-      opacity: 0.9;
-      cursor: pointer;
-    }
-  }
+  
 }

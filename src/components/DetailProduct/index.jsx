@@ -69,7 +69,11 @@ function DetailProduct() {
           </p>
         </div>
         <p className="detail-product-container--info__free-delivery">
-          + Miễn phí vận chuyển
+          + Shipping Cost:{" "}
+          <strong style={{ color: "#e1a32b", marginLeft: "1rem" }}>
+            {" "}
+            30.000đ
+          </strong>
         </p>
         <div className="detail-product-container--info__starsAndViewer">
           <div className="stars">
@@ -79,14 +83,14 @@ function DetailProduct() {
             <StarIcon className="star" />
             <StarIcon className="star" />
           </div>
-          <p className="viewer">453 người xem</p>
+          <p className="viewer">453 viewer</p>
         </div>
         <div className="detail-product-container--info__description">
           <p>
-            Sự rạng rỡ sống ở trong đôi giày này đặt một vòng quay mới trên
-            những gì bạn biết nhất: Lớp phủ chắc chắn chắc chắn, hoàn thiện sạch
-            sẽ, êm ái và lượng flash hoàn hảo để làm cho bạn tỏa sáng. Giúp
-            chúng ta tự tin hơn trong những bước đi.
+            The radiance that lives in this shoe puts a new spin on what you
+            know best: Solid overlays, clean, soft finishes and the perfect
+            amount of flash to make you shine. Help us to be more confident in
+            our steps.
           </p>
         </div>
         <div className="detail-product-container--info__sizes">
@@ -108,39 +112,39 @@ function DetailProduct() {
             <AddIcon onClick={handleClickIncrease} className="increase" />
           </div>
           <div className="add-to-cart">
-            <button onClick={handleClickAddToCart}>THÊM VÀO GIỎ</button>
+            <button onClick={handleClickAddToCart}>ADD TO CART</button>
           </div>
         </div>
       </div>
       <div className="detail-product-container--extra-info">
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Thương hiệu</p>
+          <p className="left-text">Brand</p>
           <p className="right-text">
             {detailProductItem && detailProductItem.brand}
           </p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Khối lượng</p>
+          <p className="left-text">Weight</p>
           <p className="right-text">560mg</p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Kiểu giày</p>
+          <p className="left-text">Type</p>
           <p className="right-text">Sneaker</p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Chất liệu</p>
-          <p className="right-text">Vải mesh</p>
+          <p className="left-text">Material</p>
+          <p className="right-text">Mesh Fabric</p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Xuất xứ</p>
-          <p className="right-text">Mỹ</p>
+          <p className="left-text">Origin</p>
+          <p className="right-text">American</p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Kho hàng</p>
+          <p className="left-text">Remaining Mount</p>
           <p className="right-text">100</p>
         </div>
         <div className="detail-product-container--extra-info__item">
-          <p className="left-text">Giới tính</p>
+          <p className="left-text">Gender</p>
           <p className="right-text">
             {detailProductItem && detailProductItem.gender}
           </p>

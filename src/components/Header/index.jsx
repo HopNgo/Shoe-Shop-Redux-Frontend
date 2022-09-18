@@ -42,7 +42,7 @@ function Header() {
     <div className="header-container">
       {showSearchBox && (
         <div className="header-container__searchBox">
-          <SearchBox setShowSearchBox={setShowSearchBox}/>
+          <SearchBox setShowSearchBox={setShowSearchBox} />
         </div>
       )}
       <div className="header-container__logo">
@@ -65,7 +65,7 @@ function Header() {
           to="/type/latestproduct"
           onClick={() => setShowMobileNavbar("")}
         >
-          Hàng mới
+          Latest Products
         </Link>
         <Link
           className="link"

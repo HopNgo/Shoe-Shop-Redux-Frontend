@@ -16,57 +16,62 @@ const ListCart = () => {
   return (
     <Container className="list-cart-container">
       <Row
-        className="fs-4 p-3 shadow list-cart-container__heading"
+        className="p-3 shadow list-cart-container__heading"
         style={{ backgroundColor: "rgba(234,234,234,1)" }}
       >
         <Col xs={5} className="px-5">
-          <span className="fw-bold">Sản phẩm</span>
+          <span className="fw-bold">Product Info</span>
         </Col>
         <Col
           xs={2}
           className="fw-bold d-flex align-items-center justify-content-center"
         >
-          <span>Đơn giá</span>
+          <span>Price</span>
         </Col>
         <Col
           xs={2}
           className="fw-bold d-flex align-items-center justify-content-center"
         >
-          <span>Số lượng</span>
+          <span>Quantity</span>
         </Col>
         <Col
           xs={2}
           className="fw-bold d-flex align-items-center justify-content-center"
         >
-          <span>Thành tiền</span>
+          <span>Total</span>
         </Col>
         <Col xs={1}></Col>
       </Row>
       {listCart.items.map((item, index) => (
         <Row
           key={index}
-          className="fs-4 p-3 mt-5 shadow list-cart-container__item"
+          className="p-3 mt-5 shadow list-cart-container__item"
           style={{ backgroundColor: "rgba(234,234,234,1)" }}
         >
           <Col xs={5} className="">
             <Row className="">
-              <Col xs={4}>
+              <Col
+                xs={4}
+                style={{
+                  maxWidth: "10.5rem",
+                  maxHeight: "11rem",
+                  minWidth: "10.5rem",
+                  minHeight: "11rem",
+                }}
+              >
                 <img
                   src={item.item.img}
                   alt=""
+                  width={"100%"}
+                  height={"100%"}
+                  style={{ objectFit: "cover" }}
                   className="shadow"
-                  style={{
-                    maxWidth: "10.5rem",
-                    maxHeight: "11rem",
-                    minWidth: "10.5rem",
-                    minHeight: "11rem",
-                  }}
                 />
               </Col>
               <Col>
                 <p className="fw-bold text-wrap">{item.item.name}</p>
-                <p className="fs-5">Thương hiệu:{item.item.brand}</p>
-                <p className="fs-5">Giới tính: {item.item.gender}</p>
+                <p className="fs-5">Brand: {item.item.brand}</p>
+                <p className="fs-5">Gender: {item.item.gender}</p>
                 <p className="fs-5">Size: {item.size}</p>
                 <p></p>
               </Col>
@@ -98,7 +103,7 @@ const ListCart = () => {
           >
             <DeleteIcon
               onClick={() => handleClickDeleteCart(index)}
-              className="fs-1 delete-icon"
+              className="delete-icon"
             />
           </Col>
         </Row>

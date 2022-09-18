@@ -1,4 +1,15 @@
+@import '../../assets/styles/responsive';
+
+.list-cart-container__heading, .list-cart-container__item{
+  font-size: 1.6rem;
+  @include desktop {
+    font-size: 1.4rem;
+   
+  }
+}
+
 .delete-icon {
+  font-size: 2.5rem !important;
   &:hover {
     cursor: pointer;
     opacity: 0.8;

@@ -19,12 +19,12 @@ function Comments() {
     );
     return repliesComment;
   };
-  console.log(rootComments);
+  
   return (
     <div className="comments-container">
       <CommentForm
         parentId={null}
-        label="BÌNH LUẬN"
+        label="COMMENT"
         body=""
         activeComment={activeComment}
         setActiveComment={setActiveComment}

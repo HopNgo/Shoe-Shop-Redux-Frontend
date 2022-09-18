@@ -3,21 +3,21 @@ import { Link, useParams } from "react-router-dom";
 import Filter from "../../components/Filter";
 import ListProduct from "../../components/ListProduct";
 import { Breadcrumbs, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 function ListProductPage() {
-  let nameBreadCrumb = "";
-  const gender = useParams();
-  const type = useParams();
-  const brand = useParams();
-  if (type && type.type === "latestproduct") {
-    nameBreadCrumb = "Hàng mới";
-  } else if (gender && gender.gender === "female") {
-    nameBreadCrumb = "NỮ";
-  } else if (gender && gender.gender === "male") {
-    nameBreadCrumb = "NAM";
-  } else if (brand) {
-    nameBreadCrumb = brand.brand.charAt(0).toUpperCase() + brand.brand.slice(1);
-  }
+  const [nameBreadCrumb, setNameBreadCrumb] = useState();
+  const { gender, type, brand } = useParams();
+
+  useEffect(() => {
+    if (gender) {
+      setNameBreadCrumb(gender.charAt(0).toUpperCase() + gender.slice(1));
+    } else if (type) {
+      setNameBreadCrumb(type.charAt(0).toUpperCase() + type.slice(1));
+    } else if (brand) {
+      setNameBreadCrumb(brand.charAt(0).toUpperCase() + brand.slice(1));
+    }
+  }, [gender, type, brand]);
 
   return (
     <div className="list-product-page-container">
@@ -26,7 +26,7 @@ function ListProductPage() {
           <Link className="link" underline="hover" color="inherit" to="/">
             Home
           </Link>
-          <Typography fontSize="1.5rem" fontWeight={600} color="text.primary">
+          <Typography fontSize="1.5rem" color="#533723" fontWeight={600}>
             {nameBreadCrumb}
           </Typography>
         </Breadcrumbs>

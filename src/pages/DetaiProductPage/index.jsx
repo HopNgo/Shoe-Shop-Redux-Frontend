@@ -8,7 +8,7 @@ import Comments from "../../components/CommentDetailProduct/Comments";
 
 function DetailProductPage() {
   const { brand, slug } = useParams();
-  console.log(slug, brand);
+
   return (
     <div className="detail-product-page-container">
       <div className="detail-product-page-container--breadcrumb">
@@ -24,7 +24,7 @@ function DetailProductPage() {
           >
             {brand}
           </Link>
-          <Typography fontSize="1.5rem" fontWeight={600} color="text.primary">
+          <Typography fontSize="1.5rem" fontWeight={600} color="#533723">
             {slug}
           </Typography>
         </Breadcrumbs>
@@ -39,7 +39,7 @@ function DetailProductPage() {
             <DetailProduct />
           </div>
           <div className="comment">
-            <h1> Khách Hàng Review</h1>
+            <h1>Customer Review</h1>
             <div className="comment-line"></div>
             <Comments />
           </div>

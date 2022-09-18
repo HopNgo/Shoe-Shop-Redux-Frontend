@@ -19,7 +19,7 @@ const ManageProductPage = () => {
           className="text-center fw-bold"
           style={{ fontSize: "3rem", color: "rgb(255, 122, 0)" }}
         >
-          DANH SÁCH SẢN PHẨM
+          PRODUCT LIST
         </h1>
       </Row>
       <Row className="d-flex justify-content-end">
@@ -28,7 +28,7 @@ const ManageProductPage = () => {
           style={{ maxWidth: "15rem", borderRadius: "1rem" }}
           className="btn-add fs-4 p-2 bg-primary text-white border-0 mx-5"
         >
-          Thêm sản phẩm
+          Add Product
         </Button>
       </Row>
       <Row className="px-4 py-4">

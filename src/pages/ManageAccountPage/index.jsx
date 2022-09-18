@@ -27,7 +27,7 @@ const ManageAccountPage = () => {
         </Col>
         <Col>
           <h1 className="fw-bold mt-2" style={{ color: "#ff7a00" }}>
-            Thông tin tài khoản chung
+            Account Information
           </h1>
         </Col>
       </Row>

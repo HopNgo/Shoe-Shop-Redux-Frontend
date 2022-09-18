@@ -26,7 +26,7 @@ const ChangeTelephone = ({ changeTelephone, setChangeTelephone }) => {
           className="fs-5"
           name="telephone"
           type="text"
-          placeholder="Số điện thoại"
+          placeholder="Phone Number..."
           value={changeTelephone.tel}
           onChange={(e) =>
             setChangeTelephone({
@@ -37,16 +37,14 @@ const ChangeTelephone = ({ changeTelephone, setChangeTelephone }) => {
         />
       </Row>
       {showErrorTelephone && (
-        <Row className="fs-5 text-danger mt-1 mb-1">
-          *Số điện thoại không đúng định dạng
-        </Row>
+        <Row className="fs-5 text-danger mt-1 mb-1">*Number is not valid</Row>
       )}
       <Row className="d-flex justify-content-center">
         <Button
           className="fs-5 bg-success text-white mt-2 w-50"
           onClick={handleClickChangeTelephone}
         >
-          Cập nhật
+          Update
         </Button>
       </Row>
     </>

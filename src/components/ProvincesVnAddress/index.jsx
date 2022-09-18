@@ -47,7 +47,7 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
       ...addressVN,
       provinces: provinces,
     });
-  }, []);
+  }, [addressVN]);
 
   const changeProvinces = (event) => {
     console.log(event.target.value);
@@ -88,7 +88,7 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
           value={addressVN.selectedProvinces}
           onChange={changeProvinces}
         >
-          <option value="">chọn thành phố, tỉnh</option>
+          <option value="">Select Province,City</option>
           {addressVN.provinces.map((e, key) => {
             return (
               <option value={e.name} key={key}>
@@ -107,7 +107,7 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
           value={addressVN.selectedDistricts}
           onChange={changeDistricts}
         >
-          <option value="">chọn quận, huyện </option>
+          <option value="">Select District </option>
           {addressVN.districts.length > 0 &&
             addressVN.districts.map((e, key) => {
               return (
@@ -126,7 +126,7 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
           value={addressVN.selectedWards}
           onChange={changeWards}
         >
-          <option value="">chọn phường xã</option>
+          <option value="">Select Ward</option>
 
           {addressVN.wards.map((e, key) => {
             return (
@@ -144,7 +144,7 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
           type="submit"
           className="btn bg-success text-white fs-5 w-50"
         >
-          Cập nhật
+          Update
         </button>
       </Row>
     </>

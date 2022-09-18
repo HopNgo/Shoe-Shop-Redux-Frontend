@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Col, Row } from "reactstrap";
 import Charts from "../../components/Charts";
-import RectangularBoxAdmin from "../../components/RectangularBoxAdmin";
+import RectangularBoxAdmin from "../../components/BoxAdmin";
 import "./AdminPage.scss";
 
 const AdminPage = () => {
@@ -18,29 +18,29 @@ const AdminPage = () => {
       >
         <Col xs={2}>
           <RectangularBoxAdmin
-            title="Số lượng đơn hàng"
-            value={25 + " đơn hàng"}
+            title="Number of orders"
+            value={25 + " orders"}
             backgroundColor="bg-primary"
           />
         </Col>
         <Col xs={2}>
           <RectangularBoxAdmin
-            title="Các sản phẩm bày bán"
-            value={listProducts.length + " sản phẩm"}
+            title="Number of products"
+            value={listProducts.length + " products"}
             backgroundColor="bg-warning"
           />
         </Col>
         <Col xs={2}>
           <RectangularBoxAdmin
-            title="Doanh số tất cả các năm"
-            value={25 + " triệu đồng"}
+            title="Total Sales In Year"
+            value={25 + " million dong"}
             backgroundColor="bg-danger"
           />
         </Col>
         <Col xs={2}>
           <RectangularBoxAdmin
-            title="Số lượng giày đã bán"
-            value={25 + " đôi giày"}
+            title="Number of shoes sold"
+            value={25 + " shoes"}
             backgroundColor="bg-info"
           />
         </Col>

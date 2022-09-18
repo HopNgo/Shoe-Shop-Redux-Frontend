@@ -10,7 +10,6 @@ function Cart({ isShow }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     const cartContainerElement = document.querySelector(".cart-container");
     if (isShow === true) {
@@ -30,19 +29,18 @@ function Cart({ isShow }) {
     }
   }, [isShow]);
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
+
   const handleClickDeleteIcon = (index) => {
     dispatch(removeItemCart(index));
-    console.log(index);
   };
   return (
     <div className="cart-container">
-      <h1 className="cart-container--heading">Giỏ Hàng</h1>
+      <h1 className="cart-container--heading">CART</h1>
       <div className="cart-container--title">
-        <p>Hình ảnh</p>
-        <p>Số lượng</p>
+        <p>Image</p>
+        <p>Quantity</p>
         <p>Size</p>
-        <p>Thành tiền</p>
+        <p>Total</p>
       </div>
       <div className="cart-container--item-scroll">
         {cart.items.length > 0 &&
@@ -70,7 +68,7 @@ function Cart({ isShow }) {
           ))}
       </div>
       <div className="cart-container__totalPrice">
-        <span className="title">Tổng cộng:</span>
+        <span className="title">TOTAL:</span>
         <span className="value">
           {new Intl.NumberFormat("vi-VN").format(cart.totalPrice)}
           .000đ
@@ -83,7 +81,7 @@ function Cart({ isShow }) {
         }}
         className="cart-container__btnCheckout"
       >
-        KIỂM TRA ĐƠN HÀNG
+        CHECK OUT
       </button>
     </div>
   );

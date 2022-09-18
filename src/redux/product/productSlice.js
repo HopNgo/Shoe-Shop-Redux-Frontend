@@ -5,7 +5,7 @@ export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
     const res = await productApi.getAll();
-    console.log(res.data);
+
     return res.data;
   }
 );
@@ -14,7 +14,7 @@ export const addProduct = createAsyncThunk(
   async (payload) => {
     try {
       const res = await productApi.addProduct(payload);
-      console.log(res.data);
+
       return res.data;
     } catch (error) {
       console.log(error);

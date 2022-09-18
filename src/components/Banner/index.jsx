@@ -17,7 +17,7 @@ function Banner({ backgroundImage, homeText, homeShoe, title, color }) {
     >
       <div className="banner-container__textAndBtn">
         <span style={{ color: color }}>{title}</span>
-        <button onClick={handleClickBtnBuyNow}> Mua Ngay</button>
+        <button onClick={handleClickBtnBuyNow}> Buy Now</button>
       </div>
       <div className="banner-container__images">
         <img className="text" src={homeText} alt="Not Found" />

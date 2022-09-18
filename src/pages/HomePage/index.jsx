@@ -9,11 +9,11 @@ function HomePage() {
     <div className="home-container">
       <CarouselBanner />
       <div className="latest-product-container">
-        <h1 className="latest-product-container__heading">Sản phẩm mới nhất</h1>
+        <h1 className="latest-product-container__heading">Latest Products</h1>
         <ListProductType type="latestproduct" />
       </div>
       <div className="best-seller-container">
-        <h1 className="best-seller-container__heading">Sản phẩm bán chạy</h1>
+        <h1 className="best-seller-container__heading">Best Seller</h1>
         <ListProductType type="bestseller" />
       </div>
     </div>

@@ -33,24 +33,24 @@ const TableCart = () => {
             <th className="align-middle" rowSpan={2}>
               STT
             </th>
-            <th colSpan={4}>Thông tin khách hàng</th>
-            <th colSpan={7}>Thông tin đơn hàng</th>
+            <th colSpan={4}>Customer Info</th>
+            <th colSpan={7}>Order Info</th>
             <th className="align-middle" rowSpan={2}>
-              Thời gian đặt hàng
+              Time Order
             </th>
           </tr>
           <tr className="align-middle">
-            <th>Tên khách hàng</th>
+            <th>Name</th>
             <th>Email</th>
-            <th>Số điện thoại</th>
-            <th>Địa chỉ</th>
-            <th style={{ minWidth: "16rem" }}>Tên sản phẩm</th>
+            <th>Phome Number</th>
+            <th>Address</th>
+            <th style={{ minWidth: "16rem" }}>Name Product</th>
             <th style={{ maxWidth: "4rem" }}>Size</th>
-            <th>Số lượng</th>
-            <th>Tổng đơn hàng</th>
-            <th>Giảm giá (10%)</th>
-            <th>Phí vận chuyển</th>
-            <th className="text-danger">TỔNG CỘNG</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Discount (10%)</th>
+            <th>Shipping Cost</th>
+            <th className="text-danger">TOTAL</th>
           </tr>
         </thead>
         <tbody className="fs-5">

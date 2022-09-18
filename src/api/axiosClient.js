@@ -9,7 +9,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(async (config) => {
   const localStorageToken = localStorage.getItem("accessToken");
-  console.log(localStorageToken);
+
   if (localStorageToken) {
     config.headers.Authorization = `Bearer ${localStorageToken}`;
   }

@@ -35,8 +35,12 @@ function HomeProductItem({ imageUrl, name, oldPrice, newPrice, brand, slug }) {
         <h3>{name}</h3>
       </div>
       <div className="product-item-container__price">
-        <span className="old-price">{oldPrice}.000 Đ</span>
-        <span className="new-price">{newPrice}.000 Đ</span>
+        <span className="old-price">
+          {new Intl.NumberFormat("vi-VN").format(oldPrice)} .000 VNĐ
+        </span>
+        <span className="new-price">
+          {new Intl.NumberFormat("vi-VN").format(newPrice)} .000 VNĐ
+        </span>
       </div>
     </div>
   );

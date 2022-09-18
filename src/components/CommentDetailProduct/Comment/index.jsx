@@ -13,7 +13,6 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
   const canReply = Boolean(currentUserId);
   const canEdit = currentUserId === comment.userId;
   const canDelete = currentUserId === comment.userId;
-  console.log(activeComment);
 
   const handleClickDeleteComment = (commentId) => {
     console.log(commentId);
@@ -30,7 +29,7 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
     activeComment &&
     activeComment.type === "editting" &&
     activeComment.id === comment._id;
-  console.log(isReplying);
+
   const replyId = comment.parentId ? comment.parentId : comment._id;
   return (
     <div className="comment-container">
@@ -49,7 +48,7 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
         )}
         {isEditting && (
           <CommentForm
-            label="CHỈNH SỬA"
+            label="EDIT"
             body={comment.body}
             setActiveComment={setActiveComment}
             parentId={comment.parentId}
@@ -64,7 +63,7 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
               }
               className="reply"
             >
-              Phản hồi
+              RESPONSE
             </span>
           )}
           {canEdit && (
@@ -74,7 +73,7 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
                 setActiveComment({ id: comment._id, type: "editting" })
               }
             >
-              Chỉnh sửa
+              EDIT
             </span>
           )}
           {canDelete && (
@@ -82,14 +81,14 @@ function Comment({ comment, replies, activeComment, setActiveComment }) {
               onClick={() => handleClickDeleteComment(comment._id)}
               className="delete"
             >
-              Xóa
+              REMOVE
             </span>
           )}
         </div>
         {isReplying && (
           <CommentForm
             parentId={replyId}
-            label="PHẢN HỒI"
+            label="RESPONSE"
             setActiveComment={setActiveComment}
             body=""
             activeComment={activeComment}

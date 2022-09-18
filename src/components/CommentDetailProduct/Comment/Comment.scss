@@ -11,19 +11,25 @@
   }
   &-image {
     img {
-      width: 6rem;
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
       border-radius: 50%;
       @include desktop {
-        width: 5.5rem;
+        width: 4rem;
+        height: 4rem;
       }
       @include tablet {
-        width: 5rem;
+        width: 4rem;
+        height: 4rem;
       }
       @include tabletMini {
-        width: 4rem;
+        width: 3rem;
+        height: 3rem;
       }
       @include mobile {
-        width: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }

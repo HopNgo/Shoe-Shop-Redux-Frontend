@@ -1,3 +1,4 @@
+import { LinearProgress } from "@mui/material";
 import { Formik } from "formik";
 import React from "react";
 import { Alert, Button, Form } from "react-bootstrap";
@@ -40,11 +41,14 @@ function SignInForm() {
     }
   };
   const schema = yup.object().shape({
-    username: yup.string().required("* Bạn chưa nhập tài khoản !!"),
-    password: yup.string().required("* Bạn chưa nhập mật khẩu !!"),
+    username: yup.string().required("* You didn't enter your account !!"),
+    password: yup.string().required("* You didn't enter your password !!"),
   });
   return (
     <div className="sign-in-form-container">
+      {userStore.isLoading && (
+        <LinearProgress color="warning" style={{ marginBottom: "3rem" }} />
+      )}
       {userStore.messageError.length > 0 ? (
         <Alert variant="danger" className="fs-4 mb-5">
           * {userStore.messageError}
@@ -56,7 +60,7 @@ function SignInForm() {
           * {userStore.messageSuccess}
         </Alert>
       ) : null}
-      <h1>ĐĂNG NHẬP NGAY</h1>
+      <h1>LOG IN </h1>
       <Formik
         onSubmit={(values) => handleSubmitFormSignIn(values)}
         initialValues={{
@@ -81,7 +85,7 @@ function SignInForm() {
                 className="fs-4 py-2"
                 name="username"
                 type="text"
-                placeholder="Tên tài khoản"
+                placeholder="Name Account..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.username}
@@ -97,7 +101,7 @@ function SignInForm() {
                 name="password"
                 type="password"
                 value={values.password}
-                placeholder="Mật khẩu"
+                placeholder="Password..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 isInvalid={touched.password && errors.password}
@@ -112,14 +116,14 @@ function SignInForm() {
               variant="warning"
               type="submit"
             >
-              ĐĂNG NHẬP
+              LOG IN
             </Button>
           </Form>
         )}
       </Formik>
       <div className="sign-in-form-container__line">
         <div className="left-line"></div>
-        <span className="or-text">HOẶC</span>
+        <span className="or-text">OR</span>
         <div className="right-line"></div>
       </div>
       <div className="sign-in-form-container__logo-social-media">
@@ -137,9 +141,9 @@ function SignInForm() {
         />
       </div>
       <div className="sign-in-form-container__isHasAccount">
-        <span className="text">Bạn chưa có tài khoản ?</span>
+        <span className="text">Do you not have account?</span>
         <Link className="link" to="/signup">
-          Đăng ký ngay
+          Register Now
         </Link>
       </div>
     </div>

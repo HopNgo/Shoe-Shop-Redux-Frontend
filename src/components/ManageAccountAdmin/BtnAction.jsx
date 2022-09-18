@@ -45,7 +45,7 @@ const BtnAction = ({
   const handleClickSubmit = () => {
     if (type === "name") {
       if (valueNameInput.length === 0) {
-        setError({ type: type, message: "* Bạn chưa nhập tên quản trị" });
+        setError({ type: type, message: "* You didn't enter your name" });
       } else {
         const body = { _id: adminId, name: valueNameInput };
         dispatch(updateNameUser(body));
@@ -53,7 +53,7 @@ const BtnAction = ({
       }
     } else if (type === "username") {
       if (valueUsernameInput.length === 0) {
-        setError({ type: type, message: "* Bạn chưa nhập tên tài khoản" });
+        setError({ type: type, message: "* You didn't enter your account" });
       } else {
         const body = { _id: adminId, username: valueUsernameInput };
         dispatch(updateUsernameUser(body));
@@ -61,9 +61,12 @@ const BtnAction = ({
       }
     } else if (type === "password") {
       if (valuePasswordInput.length === 0) {
-        setError({ type: type, message: "* Bạn chưa nhập mật khẩu mới" });
+        setError({
+          type: type,
+          message: "* You didn't enter your new password",
+        });
       } else if (valuePasswordInput !== valueConfirmPasswordInput) {
-        setError({ type: type, message: "* Mật khẩu không khớp" });
+        setError({ type: type, message: "* Password is not matched" });
       } else {
         const body = { _id: adminId, password: valuePasswordInput };
         dispatch(updatePasswordUser(body));
@@ -76,15 +79,15 @@ const BtnAction = ({
       {isChange.show && isChange.type === type ? (
         <>
           <span onClick={handleClickSubmit} className="p-3 text-save mx-3">
-            Lưu
+            Save
           </span>
           <span onClick={handleClickCancel} className="p-3 text-cancel">
-            Hủy
+            Cancel
           </span>
         </>
       ) : (
         <span onClick={handleClickChange} className="p-3 text-change">
-          Thay đổi
+          Change
         </span>
       )}
     </div>

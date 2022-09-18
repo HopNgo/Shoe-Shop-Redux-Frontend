@@ -72,14 +72,14 @@ const TableProduct = () => {
         <thead>
           <tr>
             <th>STT</th>
-            <th>Tên sản phẩm</th>
-            <th>Hình ảnh</th>
-            <th>Giá cũ</th>
-            <th>Giá mới</th>
-            <th>Thương hiệu</th>
-            <th>Giới tính</th>
-            <th>Loại</th>
-            <th>Chỉnh sửa/Xóa</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Old Price</th>
+            <th>New Price</th>
+            <th>Brand</th>
+            <th>Gender</th>
+            <th>Type</th>
+            <th>Edit/Remove</th>
           </tr>
         </thead>
         <tbody>
@@ -132,9 +132,15 @@ const TableProduct = () => {
                   </>
                 ) : (
                   <img
-                    style={{ maxWidth: "15rem", minWidth: "15rem" }}
+                    style={{
+                      maxWidth: "15rem",
+                      minWidth: "15rem",
+                      maxHeight: "15rem",
+                      minHeight: "15rem",
+                      objectFit: "cover",
+                    }}
                     src={product.img}
-                    alt=""
+                    alt="Not Found"
                   />
                 )}
               </td>
@@ -157,7 +163,7 @@ const TableProduct = () => {
                     </div>
                     {valuesProductEdit.costOld.length > 0 ? null : (
                       <span className="mb-5 fs-5 text-danger">
-                        * Bạn phải nhập trường này
+                        * You must enter this field
                       </span>
                     )}
                   </>
@@ -184,7 +190,7 @@ const TableProduct = () => {
                     </div>
                     {valuesProductEdit.costNew.length > 0 ? null : (
                       <span className="mb-5 fs-5 text-danger">
-                        * Bạn phải nhập trường này
+                        * You must enter this field
                       </span>
                     )}
                   </>
@@ -208,7 +214,7 @@ const TableProduct = () => {
                     />
                     {valuesProductEdit.brand.length > 0 ? null : (
                       <span className="mb-5 fs-5 text-danger">
-                        * Bạn phải nhập trường này
+                        * You must enter this field
                       </span>
                     )}
                   </>
@@ -230,12 +236,12 @@ const TableProduct = () => {
                       })
                     }
                   >
-                    <option value="male">Nam</option>
-                    <option value="female">Nữ</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
                   </Input>
                 ) : (
-                  (product.gender === "male" && "Nam") ||
-                  (product.gender === "female" && "Nữ")
+                  (product.gender === "male" && "Male") ||
+                  (product.gender === "female" && "Female")
                 )}
               </td>
               <td>
@@ -252,13 +258,13 @@ const TableProduct = () => {
                       })
                     }
                   >
-                    <option value="">Không</option>
-                    <option value="bestseller">Bán chạy nhất</option>
-                    <option value="latestproduct">Mới nhất</option>
+                    <option value="">None</option>
+                    <option value="bestseller">Best Seller</option>
+                    <option value="latestproduct">Latest Product</option>
                   </Input>
                 ) : (
-                  (product.type === "bestseller" && "Bán chạy nhất") ||
-                  (product.type === "latestproduct" && "Mới nhất")
+                  (product.type === "bestseller" && "Best Seller") ||
+                  (product.type === "latestproduct" && "Latest Product")
                 )}
               </td>
               <td>
@@ -266,24 +272,24 @@ const TableProduct = () => {
                   <>
                     <Button
                       onClick={handleClickEditProduct}
-                      className="fs-5 pt-2 pb-2 px-4 bg-primary text-white border-0 mx-3"
+                      className="fs-5 pt-2 pb-2 px-3 bg-primary text-white border-0 mx-3"
                     >
-                      Cập nhật
+                      Update
                     </Button>
                     <Button
-                      className="fs-5 pt-2 pb-2 px-4 bg-secondary border-0"
+                      className="fs-5 pt-2 pb-2 px-3 bg-secondary border-0"
                       onClick={() => setIsEditting({ show: false, id: null })}
                     >
-                      Hủy
+                      Cancel
                     </Button>
                   </>
                 ) : (
                   <>
                     <Button
                       onClick={() => handleClickBtnEdit(product._id)}
-                      className="fs-5 pt-2 pb-2 px-4 bg-success border-0 mx-3"
+                      className="fs-5 pt-2 pb-2 px-3 bg-success border-0 mx-3"
                     >
-                      Chỉnh sửa
+                      Edit
                     </Button>
                     <Button
                       onClick={() =>
@@ -292,9 +298,9 @@ const TableProduct = () => {
                           id: product._id,
                         })
                       }
-                      className="fs-5 pt-2 pb-2 px-4 bg-danger border-0"
+                      className="fs-5 pt-2 pb-2 px-3 bg-danger border-0"
                     >
-                      Xóa
+                      Remove
                     </Button>
                   </>
                 )}

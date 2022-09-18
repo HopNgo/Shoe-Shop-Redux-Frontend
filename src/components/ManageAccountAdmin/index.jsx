@@ -26,7 +26,7 @@ const ManageAccountAdmin = () => {
                 <Input
                   className="fs-5 py-2"
                   type="text"
-                  placeholder="Tên quản trị"
+                  placeholder="Admin Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -51,7 +51,7 @@ const ManageAccountAdmin = () => {
         </Row>
         <Row>
           <Row className="text-secondary fs-5 mt-3 mb-3">
-            Tên quản trị được hiển thị bên thanh dashboard
+            Admin name is displayed in the dashboard
           </Row>
           <Row>
             <hr />
@@ -61,7 +61,7 @@ const ManageAccountAdmin = () => {
       <Row className="mt-5">
         <Row>
           <Col xs={3} className="fw-bold fs-3">
-            Tên tài khoản
+            Username  
           </Col>
           <Col xs={6}>
             {isChange.show && isChange.type === "username" ? (
@@ -69,7 +69,7 @@ const ManageAccountAdmin = () => {
                 <Input
                   className="fs-5 py-2"
                   type="text"
-                  placeholder="Tên tài khoản"
+                  placeholder="User Name"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -94,7 +94,7 @@ const ManageAccountAdmin = () => {
         </Row>
         <Row>
           <Row className="text-secondary fs-5 mt-3 mb-3">
-            Tên tài khoản dùng để đăng nhập
+            Username used to log in
           </Row>
           <Row>
             <hr />
@@ -104,7 +104,7 @@ const ManageAccountAdmin = () => {
       <Row className="mt-5">
         <Row>
           <Col xs={3} className="fw-bold fs-3">
-            Mật khẩu
+            Password
           </Col>
           <Col xs={6}>
             {isChange.show && isChange.type === "password" ? (
@@ -112,14 +112,14 @@ const ManageAccountAdmin = () => {
                 <Input
                   className="fs-5 py-2 mb-3"
                   type="password"
-                  placeholder="Mật khẩu mới"
+                  placeholder="New Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <Input
                   className="fs-5 py-2"
                   type="password"
-                  placeholder="Nhập lại mật khẩu"
+                  placeholder="Password Again"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
@@ -146,7 +146,7 @@ const ManageAccountAdmin = () => {
         </Row>
         <Row>
           <Row className="text-secondary fs-5 mt-3 mb-3">
-            Mật khẩu dùng để đăng nhập
+            Password used to login
           </Row>
           <Row>
             <hr />

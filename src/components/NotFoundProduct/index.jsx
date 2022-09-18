@@ -8,9 +8,7 @@ const NotFoundProduct = () => {
         alt=""
       />
       <p className="not-found-product-container__code"> 404 </p>
-      <p className="not-found-product-container__message">
-        Không tìm thấy sản phẩm
-      </p>
+      <p className="not-found-product-container__message">Product Not Found</p>
     </div>
   );
 };

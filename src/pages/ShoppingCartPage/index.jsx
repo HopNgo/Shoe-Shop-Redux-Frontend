@@ -9,14 +9,12 @@ import "./ShoppingCartPage.scss";
 const ShoppingCartPage = () => {
   const listCart = useSelector((state) => state.cart.items);
   return (
-    <Container fluid className="shopping-cart-page-container px-5 ">
+    <Container fluid className="shopping-cart-page-container px-5">
       <Row>
-        <h1 className="shopping-cart-page-container__heading">
-          Giỏ hàng của bạn
-        </h1>
+        <h1 className="shopping-cart-page-container__heading">CART</h1>
       </Row>
       {listCart.length > 0 ? (
-        <Row className="mt-5">
+        <Row className="mt-5 shopping-cart-page-container__content">
           <Col xs={8}>
             <ListCart />
           </Col>

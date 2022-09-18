@@ -37,16 +37,14 @@ const ChangeEmail = ({ changeEmail, setChangeEmail }) => {
         />
       </Row>
       {showErrorEmail && (
-        <Row className="fs-5 text-danger mt-1 mb-1">
-          *Email không đúng định dạng
-        </Row>
+        <Row className="fs-5 text-danger mt-1 mb-1">*Email is not valid</Row>
       )}
       <Row className="d-flex justify-content-center">
         <Button
           className="fs-5 bg-success text-white mt-2 w-50"
           onClick={handleClickChangeEmail}
         >
-          Cập nhật
+          Update
         </Button>
       </Row>
     </>

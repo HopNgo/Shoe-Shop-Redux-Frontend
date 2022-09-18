@@ -14,7 +14,6 @@ const storageCart = JSON.parse(localStorage.getItem("storageCart")) || {
   totalQty: 0,
   totalPrice: 0,
 };
-console.log(storageCart);
 
 const cart = createSlice({
   name: "cart",
@@ -31,14 +30,12 @@ const cart = createSlice({
       state.isShow = false;
     },
     addItemCart: (state, action) => {
-      console.log(action.payload);
       const indexTheSameItem = state.items.findIndex(
         (item) =>
           item.item._id === action.payload.item._id &&
           action.payload.size === item.size
       );
       if (indexTheSameItem >= 0) {
-        console.log(action.payload);
         state.items[indexTheSameItem].qty += action.payload.qty;
         state.items[indexTheSameItem].price += action.payload.price;
         state.totalQty += action.payload.qty;

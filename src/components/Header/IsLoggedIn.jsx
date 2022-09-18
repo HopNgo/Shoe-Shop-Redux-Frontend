@@ -26,7 +26,7 @@ function IsLoggedIn({ currentUser }) {
     localStorage.removeItem("rememberedAccount");
     navigate("/");
   };
-  console.log(currentUser);
+  
   if (currentUser) {
     return (
       <div className="header-container__icons-image">
@@ -37,7 +37,7 @@ function IsLoggedIn({ currentUser }) {
         />
         {showLogOut && (
           <div onClick={handleClickLogOut} className="logout">
-            Đăng xuất
+            Log Out
           </div>
         )}
       </div>

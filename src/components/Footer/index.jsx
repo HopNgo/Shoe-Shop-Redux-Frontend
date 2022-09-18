@@ -6,31 +6,28 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-container--support">
-        <h2 className="footer-container--support__heading">Hổ trợ</h2>
+        <h3 className="footer-container--support__heading">Support</h3>
         <p className="footer-container--support__hotline"> 19001234</p>
         <p className="footer-container--support__content">
-          Tất cả các ngày trong tuần ( trừ lễ tết )
+          All days in week (except holidays )
         </p>
       </div>
       <div className="footer-container--branch">
-        <h2 className="footer-container--branch__heading">
-          Hệ thống chi nhánh
-        </h2>
-        <p className="footer-container--branch__city"> Thành Phố Hồ Chí Minh</p>
-        <p className="footer-container--branch__city"> Bình Dương </p>
+        <h3 className="footer-container--branch__heading">Brand System</h3>
+        <p className="footer-container--branch__city"> HCM </p>
+        <p className="footer-container--branch__city"> Ha Noi </p>
+        <p className="footer-container--branch__city"> Da Nang </p>
       </div>
       <div className="footer-container--registation">
-        <h2 className="footer-container--registation__heading">
-          Đăng ký nhận thông tin
-        </h2>
+        <h3 className="footer-container--registation__heading">
+          Sign up for information
+        </h3>
         <input
           className="footer-container--registation__input"
           type="text"
           placeholder="Email"
         />
-        <button className="footer-container--registation__btn">
-          Đăng ký ngay
-        </button>
+        <button className="footer-container--registation__btn">Register</button>
       </div>
       <div className="footer-container--social-media">
         <img

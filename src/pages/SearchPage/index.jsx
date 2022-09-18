@@ -6,7 +6,7 @@ const SearchPage = () => {
   return (
     <div className="search-page-container">
       <div className="search-page-container__heading">
-        <h3>Sản phẩm tìm kiếm</h3>
+        <h3>Search Products</h3>
       </div>
       <div className="search-page-container__line"></div>
       <div className="search-page-container-filterAndListProduct">

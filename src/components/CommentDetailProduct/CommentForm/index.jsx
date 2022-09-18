@@ -24,9 +24,9 @@ function CommentForm({
   const handleClickSubmitFormComment = () => {
     if (!currentUser) {
       navigate("/signin");
-      alert("ERROR: Bạn chưa đăng nhập !!!");
+      window.alert("ERROR: YOU ARE NOT LOGGED IN !!!");
     } else {
-      console.log(currentUser);
+      
       const comment =
         activeComment && activeComment.type === "editting"
           ? {
@@ -46,9 +46,9 @@ function CommentForm({
               parentId: parentId,
               avatarUrl: currentUser.avatarUrl,
             };
-      if (label === "PHẢN HỒI" || label === "BÌNH LUẬN") {
+      if (label === "RESPONSE" || label === "COMMENT") {
         dispatch(addCommentFn(comment));
-      } else if (label === "CHỈNH SỬA") {
+      } else if (label === "EDIT") {
         dispatch(updateCommentFn(comment));
       }
 
@@ -64,7 +64,7 @@ function CommentForm({
         className="comment-form-container__textarea"
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
-        placeholder="Viết bình luận vào đây"
+        placeholder="Enter your comments..."
       />
       <div className="comment-form-container__btn">
         <button
@@ -74,12 +74,12 @@ function CommentForm({
         >
           {label}
         </button>
-        {(label === "PHẢN HỒI" || label === "CHỈNH SỬA") && (
+        {(label === "RESPONSE" || label === "EDIT") && (
           <button
             className="comment-form-container__btn-destroy"
             onClick={() => setActiveComment(null)}
           >
-            HỦY
+            CANCEL
           </button>
         )}
       </div>

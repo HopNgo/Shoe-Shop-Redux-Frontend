@@ -38,7 +38,7 @@ const DashBoard = () => {
           style={{ fontStyle: "italic" }}
           className="text-primary fs-3 text-center "
         >
-          Xin chào, {currentUser.name}
+          Hello, {currentUser.name}
         </p>
       </Row>
       <Row className="p-3 row-feature">
@@ -51,7 +51,7 @@ const DashBoard = () => {
             style={{ textDecoration: "none", fontSize: "1.6rem" }}
             to="/admin"
           >
-            Trang chủ
+            Home
           </Link>
         </Col>
       </Row>
@@ -68,7 +68,7 @@ const DashBoard = () => {
             style={{ textDecoration: "none", fontSize: "1.6rem" }}
             to="/admin/manage-product"
           >
-            Sản phẩm
+            Products
           </Link>
         </Col>
       </Row>
@@ -85,7 +85,7 @@ const DashBoard = () => {
             style={{ textDecoration: "none", fontSize: "1.6rem" }}
             to="/admin/manage-cart"
           >
-            Đơn hàng
+            Orders
           </Link>
         </Col>
       </Row>
@@ -102,7 +102,7 @@ const DashBoard = () => {
             style={{ textDecoration: "none", fontSize: "1.6rem" }}
             to="/admin/manage-account"
           >
-            Tài khoản
+            Account
           </Link>
         </Col>
       </Row>
@@ -119,7 +119,7 @@ const DashBoard = () => {
             className="btn-feature"
             style={{ textDecoration: "none", fontSize: "1.6rem" }}
           >
-            Thoát
+            Log Out
           </button>
         </Col>
       </Row>

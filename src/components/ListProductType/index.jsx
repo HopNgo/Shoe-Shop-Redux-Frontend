@@ -15,7 +15,7 @@ SwiperCore.use([Navigation, Pagination]);
 function ListProductType({ type }) {
   const products = useSelector((state) => state.products.list);
   const statusProduct = useSelector((state) => state.products.status);
-  console.log(statusProduct);
+
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (

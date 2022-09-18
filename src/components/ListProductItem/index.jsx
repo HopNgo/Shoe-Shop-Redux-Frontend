@@ -36,7 +36,10 @@ function ListProductItem({ imageUrl, name, newPrice, brand, slug }) {
         <h3>{name}</h3>
       </div>
       <div className="list-product-item-container__price">
-        <span className="new-price">{newPrice}.000 VNĐ</span>
+        <span className="new-price">
+          {" "}
+          {new Intl.NumberFormat("vi-VN").format(newPrice)} .000 VNĐ
+        </span>
       </div>
     </div>
   );

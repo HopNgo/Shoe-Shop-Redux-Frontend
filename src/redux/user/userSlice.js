@@ -74,7 +74,6 @@ export const signInUser = createAsyncThunk(
 
 const initialStateUser = JSON.parse(localStorage.getItem("rememberedAccount"));
 
-console.log(initialStateUser);
 const user = createSlice({
   name: "user",
   initialState: {

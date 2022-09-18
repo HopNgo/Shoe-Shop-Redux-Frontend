@@ -30,21 +30,21 @@ function SignUpForm() {
   const phoneRegExp = /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/;
 
   const schema = yup.object().shape({
-    name: yup.string().required("* Bạn chưa nhập tên của bạn !!"),
-    username: yup.string().required("* Bạn chưa nhập tài khoản !!"),
+    name: yup.string().required("*You didn't enter your name !!"),
+    username: yup.string().required("* You didn't enter your account !!"),
     email: yup
       .string()
-      .required("* Bạn chưa nhập email !!")
-      .email("* Email không xác thực !! vd: abcxyz.gmail.com"),
+      .required("* You didn't enter your email !!")
+      .email("* Email is not valid !! vd: abcxyz.gmail.com"),
     telephone: yup
       .string()
-      .required("* Bạn chưa nhập số điện thoại !!")
-      .matches(phoneRegExp, "Số điện thoại không đúng định dạng !!"),
-    password: yup.string().required("* Bạn chưa nhập mật khẩu !!"),
+      .required("* You didn't enter your phone number !! !!")
+      .matches(phoneRegExp, "Phone number is not valid !!"),
+    password: yup.string().required("* You didn't enter your password !!"),
     confirmPassword: yup
       .string()
-      .required("* Bạn chưa nhập lại mật khẩu !!")
-      .oneOf([yup.ref("password")], "Mật khẩu không khớp !!"),
+      .required("* You didn't enter your password again !! !!")
+      .oneOf([yup.ref("password")], "Password is not matched !!"),
   });
   return (
     <div className="sign-up-form-container">
@@ -64,7 +64,7 @@ function SignUpForm() {
       ) : (
         <></>
       )}
-      <h1>ĐĂNG KÝ NGAY</h1>
+      <h1>REGISTER NOW</h1>
       <Formik
         onSubmit={(values) => handleSubmitFormSignUp(values)}
         initialValues={{
@@ -93,7 +93,7 @@ function SignUpForm() {
                 className="fs-4 py-2"
                 name="name"
                 type="text"
-                placeholder="Tên của bạn"
+                placeholder="Name..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
@@ -108,7 +108,7 @@ function SignUpForm() {
                 className="fs-4 py-2"
                 name="email"
                 type="email"
-                placeholder="Email của bạn"
+                placeholder="Email..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
@@ -123,7 +123,7 @@ function SignUpForm() {
                 className="fs-4 py-2"
                 name="telephone"
                 type="text"
-                placeholder="Số điện thoại của bạn"
+                placeholder="Phone number..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.telephone}
@@ -138,7 +138,7 @@ function SignUpForm() {
                 className="fs-4 py-2"
                 name="username"
                 type="text"
-                placeholder="Tên tài khoản"
+                placeholder="Account..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.username}
@@ -154,7 +154,7 @@ function SignUpForm() {
                 name="password"
                 type="password"
                 value={values.password}
-                placeholder="Mật khẩu"
+                placeholder="Password..."
                 onChange={handleChange}
                 onBlur={handleBlur}
                 isInvalid={touched.password && errors.password}
@@ -169,7 +169,7 @@ function SignUpForm() {
                 name="confirmPassword"
                 type="password"
                 value={values.confirmPassword}
-                placeholder="Nhập lại mật khẩu"
+                placeholder="Password Again"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 isInvalid={touched.confirmPassword && errors.confirmPassword}
@@ -184,15 +184,15 @@ function SignUpForm() {
               variant="warning"
               type="submit"
             >
-              ĐĂNG KÝ
+              REGISTER
             </Button>
           </Form>
         )}
       </Formik>
       <div className="sign-in-form-container__isHasAccount">
-        <span className="text">Bạn đã có tài khoản ?</span>
+        <span className="text">Do you already have an account ?</span>
         <Link className="link" to="/signin">
-          Đăng nhập ngay
+          Sign In Now
         </Link>
       </div>
     </div>

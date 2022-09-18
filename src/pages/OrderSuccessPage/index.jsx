@@ -11,20 +11,18 @@ const OrderSuccessPage = () => {
     >
       <Row className="mb-5">
         <h1 className="fw-bold " style={{ fontSize: "3rem", color: "#ff7a00" }}>
-          Giỏ hàng của bạn
+          CART
         </h1>
       </Row>
       <Row>
         <CheckCircleOutlineIcon style={{ fontSize: "20rem", color: "green" }} />
       </Row>
       <Row style={{ color: "green" }} className="fw-bold fs-1 mb-3">
-        Đặt hàng thành công
+        Success Order
       </Row>
-      <Row className="fs-4 mt-5">
-        Cảm ơn khách hàng Nguyễn Văn A đã quan tâm đến shop của chúng tôi
-      </Row>
+      <Row className="fs-4 mt-5">Thank you for your interest in our shop. </Row>
       <Row className="fs-4">
-        Xin hãy kiểm tra thông tin đặt hàng của bạn qua email
+        Please check your order information by email !!
       </Row>
       <Row className="mt-5">
         <Button
@@ -34,7 +32,7 @@ const OrderSuccessPage = () => {
           className="fs-4 pt-2 pb-2 "
           style={{ width: "20rem", backgroundColor: "#472F1E", color: "white" }}
         >
-          Tiếp tục mua sắm
+          Buy Now
         </Button>
       </Row>
     </Container>
