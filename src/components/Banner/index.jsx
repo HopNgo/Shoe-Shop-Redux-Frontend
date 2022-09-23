@@ -17,7 +17,20 @@ function Banner({ backgroundImage, homeText, homeShoe, title, color }) {
     >
       <div className="banner-container__textAndBtn">
         <span style={{ color: color }}>{title}</span>
-        <button onClick={handleClickBtnBuyNow}> Buy Now</button>
+        <button
+          onClick={handleClickBtnBuyNow}
+          style={{ color: color, border: `1.5px solid ${color}` }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = color;
+            e.target.style.color = "white";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = "transparent";
+            e.target.style.color = color;
+          }}
+        >
+          Buy Now
+        </button>
       </div>
       <div className="banner-container__images">
         <img className="text" src={homeText} alt="Not Found" />
