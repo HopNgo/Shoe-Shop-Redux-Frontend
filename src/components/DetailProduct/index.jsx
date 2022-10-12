@@ -5,18 +5,37 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addItemCart } from "../../redux/cart/cartSlice";
+import SizeGuideModal from "../SizeGuideModal";
 import "./DetailProduct.scss";
 
 function DetailProduct() {
-  let arrSize = [38, 39, 40, 41, 42];
+  const arrSize = [38, 39, 40, 41, 42];
+
+  const [isOpenSizeGuideModal, setIsOpenSizeGuideModal] = useState(false);
 
   const [sizeValue, setSizeValue] = useState(38);
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { slug } = useParams();
+
   const detailProductItem = useSelector((state) =>
     state.products.list.find((item) => item.slug === slug)
   );
+
+  useEffect(() => {
+    const listBtnSize = document.querySelectorAll(".btn-size");
+    listBtnSize.forEach((btn) => {
+      if (Number(btn.textContent) === sizeValue) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+  }, [sizeValue]);
+
+  const toggleSizeGuideModal = () => {
+    setIsOpenSizeGuideModal(!isOpenSizeGuideModal);
+  };
 
   const handleClickDecrease = () => {
     if (quantity === 1) {
@@ -31,16 +50,6 @@ function DetailProduct() {
   const handleClickBtnSize = (size) => {
     setSizeValue(size);
   };
-  useEffect(() => {
-    const listBtnSize = document.querySelectorAll(".btn-size");
-    listBtnSize.forEach((btn) => {
-      if (Number(btn.textContent) === sizeValue) {
-        btn.classList.add("active");
-      } else {
-        btn.classList.remove("active");
-      }
-    });
-  }, [sizeValue]);
 
   const handleClickAddToCart = () => {
     const itemAddToCart = {
@@ -104,6 +113,13 @@ function DetailProduct() {
               {size}
             </button>
           ))}
+        </div>
+        <div className="detail-product-container--info__sizeGuide">
+          <SizeGuideModal
+            isOpenSizeGuideModal={isOpenSizeGuideModal}
+            toggle={toggleSizeGuideModal}
+          />
+          <span onClick={toggleSizeGuideModal}>Size Guide</span>
         </div>
         <div className="detail-product-container--info__quantityAndAddToCart">
           <div className="quantity">

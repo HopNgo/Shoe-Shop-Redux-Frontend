@@ -166,7 +166,7 @@
       }
     }
     &__sizes {
-      margin-top: 14rem;
+      margin-top: 10rem;
 
       .title {
         font-size: 2rem;
@@ -190,7 +190,7 @@
         border: 1px solid #533723;
         font-size: 1.7rem;
         padding: 0.5rem 1rem;
-        color :#533723;
+        color: #533723;
         @include desktop {
           font-size: 1.3rem;
         }
@@ -207,6 +207,20 @@
       }
       button.active {
         border: 3px solid rgba($color: #533723, $alpha: 0.8);
+      }
+    }
+    &__sizeGuide {
+      display: flex;
+      margin-top: 2rem;
+      span {
+        font-style: italic;
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        font-size: 1.6rem;
+        &:hover {
+          cursor: pointer;
+          font-weight: bold;
+        }
       }
     }
     &__quantityAndAddToCart {
@@ -304,7 +318,7 @@
       }
       .right-text {
         font-size: 1.3rem;
-        @include tabletMini{
+        @include tabletMini {
           font-size: 1.2rem;
         }
         @include mobile {

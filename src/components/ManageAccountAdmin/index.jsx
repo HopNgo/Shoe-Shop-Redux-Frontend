@@ -18,7 +18,7 @@ const ManageAccountAdmin = () => {
       <Row className="mt-5">
         <Row>
           <Col xs={3} className="fw-bold fs-3">
-            Tên quản trị
+            Admin Name
           </Col>
           <Col xs={6}>
             {isChange.show && isChange.type === "name" ? (
@@ -61,7 +61,7 @@ const ManageAccountAdmin = () => {
       <Row className="mt-5">
         <Row>
           <Col xs={3} className="fw-bold fs-3">
-            Username  
+            Username
           </Col>
           <Col xs={6}>
             {isChange.show && isChange.type === "username" ? (
