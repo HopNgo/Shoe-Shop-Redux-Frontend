@@ -20,11 +20,11 @@ Password: admin
 
 ## Deploy
 
-Demo : [https://trello-clone-ngo-hop.netlify.app/](https://shoe-shop-app-hopngo.netlify.app/)
+Demo : [https://shoe-shop-app-hopngo.netlify.app/](https://shoe-shop-app-hopngo.netlify.app/)
 
 ## Backend Git
 
-Link : [https://github.com/HopNgo/trello-clone-app-backend.git](https://github.com/HopNgo/Shoe-Shop-Redux-Backend.git)
+Link : [https://github.com/HopNgo/Shoe-Shop-Redux-Backend.git](https://github.com/HopNgo/Shoe-Shop-Redux-Backend.git)
 
 
 ## Clone project and run test
