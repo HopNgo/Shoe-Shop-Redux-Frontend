@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Row } from "reactstrap";
 import provinces from "../../constants/provinces";
@@ -8,7 +8,7 @@ import "./ProvincesVnAddress.scss";
 const ProvincesVnAddress = ({ setShowChangeAddress }) => {
   const dispatch = useDispatch();
   const [addressVN, setAddressVN] = useState({
-    provinces: [],
+    provinces: provinces,
     districts: [],
     wards: [],
     selectedProvinces: "",
@@ -41,13 +41,6 @@ const ProvincesVnAddress = ({ setShowChangeAddress }) => {
   };
 
   console.log(addressVN);
-
-  useEffect(() => {
-    setAddressVN({
-      ...addressVN,
-      provinces: provinces,
-    });
-  }, [addressVN]);
 
   const changeProvinces = (event) => {
     console.log(event.target.value);

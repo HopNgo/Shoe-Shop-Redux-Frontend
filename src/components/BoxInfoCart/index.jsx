@@ -99,11 +99,11 @@ const BoxInfoCart = () => {
         </Row>
         <Row className="cart-info-content">
           <Row className="pb-2 pt-2">
-            <Col xs={4}>Customer Name: </Col>
+            <Col xs={3}> Name: </Col>
             <Col>{currentUser.name}</Col>
           </Row>
           <Row className="pb-2 pt-2">
-            <Col xs={4}>Email: </Col>
+            <Col xs={3}>Email: </Col>
             {changeEmail.show ? (
               <Col>
                 <ChangeEmail
@@ -129,7 +129,7 @@ const BoxInfoCart = () => {
             </Col>
           </Row>
           <Row className="pb-2 pt-2">
-            <Col xs={4}>Phone: </Col>
+            <Col xs={3}>Phone: </Col>
             {changeTelephone.show ? (
               <Col>
                 <ChangeTelephone
@@ -157,7 +157,7 @@ const BoxInfoCart = () => {
             </Col>
           </Row>
           <Row className="pb-2 pt-2">
-            <Col xs={4}>Address: </Col>
+            <Col xs={3}>Address: </Col>
             {showChangeAddress ? (
               <Col>
                 <ProvincesVnAddress
@@ -182,7 +182,7 @@ const BoxInfoCart = () => {
             </Col>
           </Row>
           <Row className="pb-2 pt-2">
-            <Col xs={4}>Total: </Col>
+            <Col xs={3}>Total: </Col>
             <Col>
               {new Intl.NumberFormat("vi-VN").format(listCart.totalPrice)}.000đ
             </Col>
@@ -197,7 +197,7 @@ const BoxInfoCart = () => {
           </Row>
         </Row>
         <hr />
-        <Row className="text-danger fs-3 fw-bold mt-5 pb-5">
+        <Row className="text-danger fs-2 fw-bold mt-5 pb-5">
           <Col xs={4}>TOTAL:</Col>
           <Col>
             {new Intl.NumberFormat("vi-VN").format(

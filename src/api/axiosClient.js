@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://shoe-shop-app-hopngo.herokuapp.com/api",
+  baseURL: `${process.env.REACT_APP_API_URL_HEROKU}/api`,
   headers: {
     "content-type": "application/json",
   },
