@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: `${process.env.REACT_APP_API_URL_HEROKU}/api`,
+  baseURL: "https://shoe-shop-redux-backend-6kdi.onrender.com/api",
   headers: {
     "content-type": "application/json",
   },
